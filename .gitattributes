@@ -13,3 +13,8 @@
 *.xml text
 *.rviz text
 CMakeLists.txt text
+
+# 语言统计显式标记（触发 GitHub linguist 重新分析）
+*.cpp  linguist-detectable
+*.hpp  linguist-detectable
+*.py   linguist-detectable
