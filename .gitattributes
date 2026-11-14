@@ -1,0 +1,15 @@
+# 统一换行符为 LF（ROS2 在 Linux 里编译，CRLF 会带来噪声 diff）
+* text=auto eol=lf
+
+# 二进制资源：禁止任何换行符转换
+*.pgm binary
+*.png binary
+*.jpg binary
+
+# 明确源码类型，方便 GitHub 语言统计
+*.cpp text
+*.hpp text
+*.py text
+*.xml text
+*.rviz text
+CMakeLists.txt text

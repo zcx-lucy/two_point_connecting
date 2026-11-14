@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>two_point_planner</name>
+  <version>2.0.0</version>
+  <description>
+    在 RViz 占据栅格地图（costmap）上点击两个点，用 JPS 跳点搜索（可选 A*）
+    计算两点间最短路径并可视化（C++ 实现）。
+    含机器人本体膨胀代价层（robot_radius 致死圈 + 指数衰减层，参考 RoboMaster 比例）。
+    Load an occupancy grid map (mymap.pgm/yaml), click start &amp; goal in RViz,
+    plan with JPS (or A*) and display the path.
+  </description>
+  <maintainer email="3026201239@tju.edu.cn">ian</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>visualization_msgs</depend>
+
+  <!-- 运行期依赖：launch 中启动 -->
+  <exec_depend>nav2_map_server</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
