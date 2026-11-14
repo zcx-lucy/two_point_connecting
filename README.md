@@ -286,3 +286,11 @@ JPS/A* 代码无需改动。
 9. **路径线太细 / 太粗**
    → Path 显示的 `Line Style` 用 **Billboards** 才会按米加宽
    （`Lines` 样式用的是 OpenGL 固定 1px，改 `Line Width` 无效）。
+
+## 10. 更新记录
+
+| 版本 | 内容 |
+|---|---|
+| v3 | 核心节点改为 **C++17（rclcpp / ament_cmake）**：距离变换 31 ms、JPS 规划 ~16 ms、A* ~45 ms；修复 `/planned_path` 与 `/start_goal_markers` 的 QoS 不匹配、Path 线型与 MarkerArray 显示类问题 |
+| v2 | 引入**机体膨胀代价层**（`robot_radius` 致死层 + 指数衰减层，按 RoboMaster 比例取 0.38 m）与 **JPS 跳点搜索**，支持 `planner:=jps\|astar` 切换；未知区严格禁行 + 无解自动兜底 |
+| v1 | 初版：`nav2_map_server` 加载 `mymap`，八连通 **A\*** 求两点最短路径并在 RViz 中显示 |
